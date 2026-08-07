@@ -15,10 +15,9 @@
 
 # Project Description
 
-BookCart is a modern e-commerce platform that allows users to browse books, register accounts, authenticate, manage shopping carts, and place orders online. that allows users to browse books, register accounts, authenticate, manage shopping carts, and place orders online.
+BookCart is a modern e-commerce platform that allows users to browse books, register accounts, authenticate, manage shopping carts, and place orders online.
 
 The application includes a responsive web interface and REST API used for communication between the frontend and backend.
-
 ---
 
 # Main Features
