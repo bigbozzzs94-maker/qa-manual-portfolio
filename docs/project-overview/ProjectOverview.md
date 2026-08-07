@@ -38,40 +38,41 @@ The application includes a responsive web interface and REST API used for commun
 ---
 
 # Technology Stack
+## Technology Stack
 
 ### Frontend
-
 - Angular
 
 ### Backend
-
 - ASP.NET Core
 
 ### Database
-
 - SQL Server
 
 ### API
-
 - REST API
 
+### Testing
+- Postman
+- Swagger
+- Chrome DevTools
+- Charles Proxy
+
+### Project Management
+- Jira
+- Confluence
+
 ---
 
-# Testing Objectives
+## Testing Types
 
-The primary goal of this project is to demonstrate a complete Manual QA workflow including:
-
-- Test Planning
-- Test Strategy
-- Test Design
-- Checklist Creation
-- Test Case Development
-- Bug Reporting
+- Functional Testing
+- UI Testing
 - API Testing
-- SQL Validation
-
----
-
+- Smoke Testing
+- Regression Testing
+- Exploratory Testing
+- Cross-browser Testing
 # Repository Structure
 
 ```text
