@@ -20,6 +20,11 @@ BookCart is a modern e-commerce platform that allows users to browse books, regi
 The application includes a responsive web interface and REST API used for communication between the frontend and backend.
 
 ## Core Features
+## Target Users
+
+- Guest User
+- Registered User
+- Administrator
 - User Registration
 - User Authentication
 - User Profile
