@@ -1,5 +1,5 @@
 # 📌 Project Overview
-
+## Core Features
 ## Project Information
 
 | Field | Value |
