@@ -137,7 +137,51 @@ Demonstrated SQL concepts:
 ➡️ [View SQL Queries](sql/SQLQueries.md)
 
 ---
+## 📂 QA Documentation & Artifacts
 
+This section contains QA documentation and testing artifacts created for the BookCart project.
+
+### 🧠 Mind Map
+
+Visual representation of the application structure, testing scope, functional areas, test types, and testing techniques.
+
+➡️ [View Mind Map](docs/mind-maps/MindMap.md)
+
+### ✅ Checklists
+
+Checklists covering the main functionality of the application.
+
+➡️ [View Checklists](checklists/Checklists.md)
+
+### 🧪 Test Cases
+
+Detailed test cases with preconditions, test steps, expected results, and priorities.
+
+➡️ [View Test Cases](docs/test-cases/TestCases.md)
+
+### 📋 Test Plan
+
+Test plan describing the testing scope, objectives, resources, risks, and deliverables.
+
+➡️ [View Test Plan](docs/test-plan/TestPlan.md)
+
+### 🎯 Test Strategy
+
+Overall testing approach, including test levels, test types, testing techniques, and entry/exit criteria.
+
+➡️ [View Test Strategy](docs/test-strategy/TestStrategy.md)
+
+### 🐞 Bug Reports
+
+Examples of bug reports identified during functional testing.
+
+➡️ [View Bug Reports](test-artifacts/BugReports.md)
+
+### 🗄 SQL Queries
+
+SQL queries demonstrating database testing and data validation skills.
+
+➡️ [View SQL Queries](sql/SQLQueries.md)
 ## 🛠 Tools & Technologies
 
 - Jira
