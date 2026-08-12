@@ -1,326 +1,313 @@
-# Test Plan
+# 📋 Test Plan
 
-## 1. Project Information
-
-**Project:** BookCart — E-commerce Web Application  
-**Document Type:** Test Plan  
-**Testing Type:** Manual Testing  
-**Status:** Active  
-
-BookCart is an e-commerce web application that allows users to register, log in, browse products, search for products, manage a shopping cart, and place orders.
+> Comprehensive test plan for the **BookCart — E-commerce Web Application**.
 
 ---
 
-## 2. Purpose
+## 📌 Project Information
 
-The purpose of this test plan is to define the scope, objectives, strategy, resources, and approach for testing the BookCart application.
-
-Testing is performed to verify that the main functionality works according to requirements and to identify defects before release.
-
----
-
-## 3. Test Objectives
-
-The main objectives of testing are:
-
-- Verify user registration functionality.
-- Verify user authentication and authorization.
-- Verify product catalog functionality.
-- Verify product search.
-- Verify shopping cart functionality.
-- Verify checkout and order creation.
-- Verify API responses for key application functionality.
-- Verify validation and error messages.
-- Identify and document defects.
+| Parameter | Description |
+|---|---|
+| **Project** | BookCart |
+| **Application Type** | E-commerce Web Application |
+| **Platform** | Web |
+| **Testing Type** | Manual Testing |
+| **Document Type** | Test Plan |
+| **Status** | Active |
 
 ---
 
-## 4. Scope of Testing
+# 🎯 1. Test Objectives
 
-### In Scope
+The main objective of testing is to verify that the BookCart application works according to the expected requirements and provides a stable user experience.
 
-The following functionality will be tested:
+Testing objectives include:
 
-#### Authentication
-
-- User registration.
-- Registration with valid data.
-- Registration with invalid data.
-- Registration with an existing email.
-- User login with valid credentials.
-- User login with invalid credentials.
-- Logout functionality.
-- Validation of authentication fields.
-
-#### Product Catalog
-
-- Opening the product catalog.
-- Displaying products.
-- Searching for existing products.
-- Searching for non-existing products.
-- Opening product details.
-- Verifying product information.
-
-#### Shopping Cart
-
-- Adding products to the cart.
-- Removing products from the cart.
-- Changing product quantity.
-- Verifying cart total.
-- Verifying cart persistence.
-
-#### Checkout
-
-- Opening the checkout page.
-- Completing checkout with valid data.
-- Validating required fields.
-- Creating an order.
-- Verifying successful order confirmation.
-
-#### API Testing
-
-- Verifying request methods.
-- Verifying response status codes.
-- Verifying response body.
-- Verifying response headers.
-- Testing positive and negative scenarios.
+- Verify critical business functionality
+- Identify functional defects
+- Validate user input
+- Verify positive and negative scenarios
+- Verify integration between application modules
+- Validate API responses
+- Verify database data where applicable
+- Reduce the risk of critical defects before release
 
 ---
 
-## 5. Out of Scope
+# 📦 2. Test Scope
 
-The following functionality is not included in the current testing scope:
+## ✅ In Scope
 
-- Performance testing.
-- Load testing.
-- Stress testing.
-- Security penetration testing.
-- Full cross-browser testing.
-- Accessibility testing.
-- Automated testing.
+The following functionality is included in testing:
 
-These areas may be covered in future testing iterations.
+### 📝 Registration
 
----
+- User registration
+- Email validation
+- Password validation
+- Required field validation
+- Password confirmation
+- Existing email validation
 
-## 6. Test Approach
+### 🔐 Authentication
 
-Testing will be performed manually using functional and non-functional testing techniques.
+- User login
+- User logout
+- Valid credentials
+- Invalid credentials
+- Session validation
+- Protected page access
 
-The following testing types will be used:
+### 📚 Product Catalog
 
-- Functional Testing.
-- Smoke Testing.
-- Regression Testing.
-- Positive Testing.
-- Negative Testing.
-- Integration Testing.
-- API Testing.
-- UI Testing.
+- Product list
+- Product details
+- Product information
+- Product price
+- Product images
 
-Testing will be performed based on available application requirements and expected system behavior.
+### 🔎 Product Search
 
----
+- Search by product name
+- Partial search
+- Case-insensitive search
+- Empty search
+- Non-existing product search
 
-## 7. Test Design Techniques
+### 🛒 Shopping Cart
 
-The following test design techniques will be used:
+- Add products
+- Remove products
+- Update product quantity
+- Cart total calculation
+- Empty cart handling
 
-- Equivalence Partitioning.
-- Boundary Value Analysis.
-- Decision Table Testing.
-- State Transition Testing.
-- Error Guessing.
+### 💳 Checkout
 
-These techniques will help cover both valid and invalid application scenarios.
+- Checkout navigation
+- Required field validation
+- Customer information validation
+- Order summary
+- Order creation
 
----
+### 📦 Order Management
 
-## 8. Test Environment
+- Order list
+- Order details
+- Order status
+- Order information validation
 
-### Operating System
+### 🔌 API Testing
 
-- Windows 11.
-
-### Browsers
-
-- Google Chrome.
-
-### Tools
-
-- Jira — defect tracking and task management.
-- Postman — API testing.
-- Swagger — API documentation and endpoint verification.
-- Chrome DevTools — frontend and network analysis.
-- Charles Proxy — HTTP/HTTPS traffic analysis.
-- SQL — database queries and data verification.
-- GitHub — test documentation storage.
-- Git — version control.
-
----
-
-## 9. Test Data
-
-The following test data categories will be used:
-
-### Valid Data
-
-- Valid email addresses.
-- Valid passwords.
-- Existing user accounts.
-- Existing products.
-- Valid checkout information.
-
-### Invalid Data
-
-- Invalid email format.
-- Empty required fields.
-- Incorrect passwords.
-- Non-existing user accounts.
-- Non-existing products.
-- Invalid checkout data.
-
-Test data should not contain real confidential or personal user information.
+- Request validation
+- Response validation
+- HTTP status codes
+- Authentication
+- Authorization
+- Positive scenarios
+- Negative scenarios
 
 ---
 
-## 10. Entry Criteria
+## ⛔ Out of Scope
+
+The following testing types are outside the scope of the current portfolio project:
+
+- Load Testing
+- Stress Testing
+- Full Performance Testing
+- Penetration Testing
+- Full Security Testing
+- Accessibility Testing
+- Automated End-to-End Testing
+
+---
+
+# 🧪 3. Test Strategy
+
+The following testing types will be performed:
+
+| Test Type | Description |
+|---|---|
+| Smoke Testing | Verification of critical functionality |
+| Functional Testing | Verification of application requirements |
+| UI Testing | Verification of interface behavior |
+| Positive Testing | Testing with valid data |
+| Negative Testing | Testing with invalid data |
+| Regression Testing | Verification after changes |
+| Exploratory Testing | Investigation of potential defects |
+| API Testing | Backend endpoint validation |
+| Integration Testing | Verification of module interaction |
+
+---
+
+# 🧩 4. Test Design Techniques
+
+The following techniques are used to design test scenarios:
+
+- Equivalence Partitioning
+- Boundary Value Analysis
+- Decision Table Testing
+- State Transition Testing
+- Error Guessing
+
+### Examples
+
+| Technique | Example |
+|---|---|
+| Equivalence Partitioning | Valid and invalid product quantity ranges |
+| Boundary Value Analysis | Test values `0`, `1`, `10`, `11` |
+| Decision Table | Order creation conditions |
+| State Transition | Order status changes |
+| Error Guessing | Invalid input and common risk scenarios |
+
+---
+
+# 🛠 5. Test Environment
+
+## Application Environment
+
+| Component | Description |
+|---|---|
+| Application | BookCart |
+| Platform | Web |
+| Browser | Google Chrome |
+| Testing | Manual Testing |
+
+## Tools
+
+| Tool | Purpose |
+|---|---|
+| Jira | Task and defect tracking |
+| Postman | API testing |
+| Swagger | API documentation |
+| Chrome DevTools | Frontend debugging and network analysis |
+| Charles Proxy | Network traffic analysis |
+| SQL | Database validation |
+| Git | Version control |
+| GitHub | Documentation and portfolio |
+| Confluence | Documentation |
+| Kibana | Log analysis |
+| Android Studio | Mobile testing |
+
+---
+
+# 👥 6. Roles and Responsibilities
+
+| Role | Responsibility |
+|---|---|
+| QA Engineer | Test planning and execution |
+| QA Engineer | Checklist creation |
+| QA Engineer | Test case creation |
+| QA Engineer | Functional testing |
+| QA Engineer | API testing |
+| QA Engineer | Bug reporting |
+| QA Engineer | Regression testing |
+| Developer | Defect fixing |
+| Analyst | Requirement clarification |
+| Team Lead | Testing coordination |
+
+---
+
+# 🔄 7. Testing Process
+
+```text
+Requirements Analysis
+        ↓
+Test Planning
+        ↓
+Test Design
+        ↓
+Checklist Creation
+        ↓
+Test Case Creation
+        ↓
+Test Environment Preparation
+        ↓
+Test Execution
+        ↓
+Bug Reporting
+        ↓
+Bug Verification
+        ↓
+Regression Testing
+        ↓
+Test Completion
+```
+
+---
+
+# 🚀 8. Entry Criteria
 
 Testing can begin when:
 
-- The application build is available.
-- Main functionality is implemented.
-- The test environment is available.
-- Required test data is available.
-- API documentation is available, if applicable.
-- Test cases and checklists are prepared.
+- [x] Requirements are available
+- [x] Application build is available
+- [x] Test environment is accessible
+- [x] Required test data is available
+- [x] Critical functionality is implemented
+- [x] API documentation is available where required
 
 ---
 
-## 11. Exit Criteria
+# 🏁 9. Exit Criteria
 
 Testing can be considered complete when:
 
-- All planned test cases have been executed.
-- Critical defects have been fixed or accepted.
-- High-priority defects have been fixed or accepted.
-- Regression testing has been completed.
-- Test results have been documented.
-- Known issues have been recorded.
+- [x] Planned test cases have been executed
+- [x] Critical functionality has been tested
+- [x] Critical defects are resolved or documented
+- [x] High-priority defects are resolved or accepted
+- [x] Regression testing is completed
+- [x] Test results are documented
 
 ---
 
-## 12. Defect Management
-
-All identified defects should contain the following information:
-
-- Bug ID.
-- Title.
-- Environment.
-- Preconditions.
-- Steps to reproduce.
-- Actual result.
-- Expected result.
-- Severity.
-- Priority.
-- Status.
-- Attachments, if required.
-
-Defects will be documented and tracked using Jira.
-
-Bug report examples are available in:
-
-[`test-artifacts/BugReports.md`](../../test-artifacts/BugReports.md)
-
----
-
-## 13. Test Deliverables
-
-The following QA documentation is included in the project:
-
-- Test Plan.
-- Checklists.
-- Test Cases.
-- Bug Reports.
-- SQL Queries.
-- API Testing documentation.
-- Screenshots and supporting artifacts.
-
-Related documents:
-
-- [`Checklists`](../../Checklists/Checklists.md)
-- [`Test Cases`](../test-cases/TestCases.md)
-- [`Bug Reports`](../../test-artifacts/BugReports.md)
-- [`SQL Queries`](../../sql/SQLQueries.md)
-
----
-
-## 14. Risks
-
-Potential testing risks include:
+# ⚠️ 10. Risks
 
 | Risk | Impact | Mitigation |
 |---|---|---|
-| Application environment is unavailable | Testing delays | Report the issue and resume testing when the environment is available |
-| Requirements are unclear | Incorrect test coverage | Clarify expected behavior before testing |
-| Test data is unavailable | Test execution is limited | Prepare test data before testing |
-| Critical defects are found late | Release delays | Perform smoke and regression testing regularly |
-| Application functionality changes | Existing tests may become outdated | Update test documentation and execute regression testing |
+| Unclear requirements | High | Clarify requirements with stakeholders |
+| Unstable environment | High | Report environment issues and retest |
+| Insufficient test data | Medium | Prepare test data in advance |
+| Limited testing time | High | Prioritize critical functionality |
+| Late changes | High | Perform focused regression testing |
+| API instability | Medium | Retest endpoints and validate logs |
+| Undetected integration issues | High | Test critical end-to-end flows |
 
 ---
 
-## 15. Roles and Responsibilities
+# 📊 11. Test Deliverables
 
-### QA Engineer
+The following QA artifacts are created during testing:
 
-Responsibilities:
-
-- Analyze requirements.
-- Prepare test documentation.
-- Create checklists.
-- Create test cases.
-- Execute manual testing.
-- Perform API testing.
-- Perform regression testing.
-- Create bug reports.
-- Verify defect fixes.
-- Prepare test results.
-
-### Developers
-
-Responsibilities:
-
-- Implement application functionality.
-- Fix identified defects.
-- Provide technical information when required.
-
-### Team Lead / Project Manager
-
-Responsibilities:
-
-- Coordinate testing activities.
-- Define priorities.
-- Support issue resolution.
-- Approve testing scope and release decisions.
+- 🧠 Mind Map
+- 📌 Project Overview
+- ✅ Checklists
+- 🧪 Test Cases
+- 📋 Test Plan
+- 🎯 Test Strategy
+- 🧩 Test Design Techniques
+- 🔌 API Test Cases
+- 🐞 Bug Reports
+- 🗄 SQL Queries
 
 ---
 
-## 16. Test Status
+# 🔗 Related Documentation
 
-Testing status is tracked during test execution.
-
-Possible test statuses:
-
-- **Not Run**
-- **Pass**
-- **Fail**
-- **Blocked**
-- **Skipped**
+- [📌 Project Overview](../project-overview/ProjectOverview.md)
+- [🧠 Mind Map](../mind-maps/MindMap.md)
+- [🧩 Test Design](../test-design/TestDesign.md)
+- [✅ Checklists](../../checklists/Checklists.md)
+- [🧪 Test Cases](../test-cases/TestCases.md)
+- [🎯 Test Strategy](../test-strategy/TestStrategy.md)
+- [🔌 API Testing](../../api-testing/ApiTesting.md)
+- [🐞 Bug Reports](../../test-artifacts/BugReports.md)
+- [🗄 SQL Queries](../../sql/SQLQueries.md)
 
 ---
 
-## 17. Approval
+## 📌 Notes
 
-The test plan may be updated during the project lifecycle if application requirements, functionality, or testing scope changes.
-
-All significant changes should be reviewed before the next testing cycle.
+> This test plan defines the overall scope, objectives, approach, environment, risks, and deliverables for testing the BookCart application.
