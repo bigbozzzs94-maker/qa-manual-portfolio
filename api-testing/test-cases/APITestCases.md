@@ -1,244 +1,365 @@
+# 🧪 API Test Cases
 
-API Test Cases
-Project
+> Detailed API test cases for the **BookCart E-commerce Web Application**.
 
-BookCart — E-commerce Web Application
+---
 
-This document contains API test cases for the main BookCart application functionality.
+## 📋 Test Case Information
 
-1. Authentication API
-API-TC-001 — Register a new user with valid data
+| Parameter | Description |
+|---|---|
+| **Project** | BookCart |
+| **Testing Type** | API Testing |
+| **Tool** | Postman |
+| **API Format** | JSON |
+| **Protocol** | HTTP / HTTPS |
 
-Priority: High
-Method: POST
-Endpoint: /api/auth/register
+---
 
-Preconditions: User with the specified email does not exist.
+# 🔐 Authentication
 
-Request Body:
+---
 
-{
-  "name": "Test User",
-  "email": "testuser@example.com",
-  "password": "Test123!"
-}
+## TC-API-001 — Register User with Valid Data
 
-Steps:
+**Priority:** High
 
-Send a POST request to the registration endpoint.
-Provide valid user data.
-Check the response.
+### Preconditions
 
-Expected Result:
+- Registration endpoint is available.
 
-Status code is 201 Created.
-A new user is successfully created.
-Response contains user information.
-Password is not returned in the response.
-API-TC-002 — Register with an existing email
+### Request
 
-Priority: High
-Method: POST
-Endpoint: /api/auth/register
+```http
+POST /api/auth/register
+```
 
-Preconditions: A user with the specified email already exists.
+### Request Body
 
-Request Body:
-
-{
-  "name": "Test User",
-  "email": "existing@example.com",
-  "password": "Test123!"
-}
-
-Expected Result:
-
-Status code is 400 Bad Request or 409 Conflict.
-An error message is returned.
-A duplicate user is not created.
-API-TC-003 — Login with valid credentials
-
-Priority: High
-Method: POST
-Endpoint: /api/auth/login
-
-Preconditions: A registered user exists.
-
-Request Body:
-
+```json
 {
   "email": "testuser@example.com",
-  "password": "Test123!"
+  "password": "Password123"
 }
+```
 
-Expected Result:
+### Steps
 
-Status code is 200 OK.
-Authentication is successful.
-Response contains an authentication token or session data.
-API-TC-004 — Login with invalid credentials
+1. Open Postman.
+2. Select the `POST` method.
+3. Enter the registration endpoint.
+4. Add valid user data.
+5. Send the request.
 
-Priority: High
-Method: POST
-Endpoint: /api/auth/login
+### Expected Result
 
-Request Body:
+- Response status code is `201 Created`.
+- User is successfully registered.
+- Response contains user information or a success message.
 
+---
+
+## TC-API-002 — Register User with Existing Email
+
+**Priority:** High
+
+### Preconditions
+
+- User with the specified email already exists.
+
+### Steps
+
+1. Send a registration request.
+2. Use an existing email.
+3. Send the request.
+
+### Expected Result
+
+- Response status code is `400 Bad Request` or another expected validation status.
+- User is not created.
+- An appropriate error message is returned.
+
+---
+
+## TC-API-003 — Register User with Invalid Email
+
+**Priority:** Medium
+
+### Test Data
+
+```json
+{
+  "email": "invalid-email",
+  "password": "Password123"
+}
+```
+
+### Expected Result
+
+- Request is rejected.
+- Validation error is returned.
+- Invalid user is not created.
+
+---
+
+# 🔑 Login
+
+---
+
+## TC-API-004 — Login with Valid Credentials
+
+**Priority:** Critical
+
+### Request
+
+```http
+POST /api/auth/login
+```
+
+### Request Body
+
+```json
 {
   "email": "testuser@example.com",
-  "password": "WrongPassword"
+  "password": "Password123"
 }
+```
 
-Expected Result:
+### Expected Result
 
-Status code is 401 Unauthorized.
-An appropriate error message is returned.
-Authentication token is not returned.
-2. Product API
-API-TC-005 — Get product list
+- Response status code is `200 OK`.
+- User is successfully authenticated.
+- Authentication token is returned.
 
-Priority: High
-Method: GET
-Endpoint: /api/products
+---
 
-Steps:
+## TC-API-005 — Login with Invalid Password
 
-Send a GET request to the products endpoint.
-Check the response.
+**Priority:** High
 
-Expected Result:
+### Expected Result
 
-Status code is 200 OK.
-Response contains a list of products.
-Each product contains valid required fields.
-API-TC-006 — Get product by valid ID
+- Authentication fails.
+- Response status code is `401 Unauthorized` or expected validation status.
+- Error message is returned.
+- Authentication token is not generated.
 
-Priority: High
-Method: GET
-Endpoint: /api/products/{id}
+---
 
-Preconditions: A product with the specified ID exists.
+# 📚 Products
 
-Expected Result:
+---
 
-Status code is 200 OK.
-Response contains the requested product.
-Product ID matches the requested ID.
-API-TC-007 — Get product by invalid ID
+## TC-API-006 — Get Product List
 
-Priority: Medium
-Method: GET
-Endpoint: /api/products/{invalid_id}
+**Priority:** High
 
-Expected Result:
+### Request
 
-Status code is 404 Not Found.
-An appropriate error message is returned.
-3. Cart API
-API-TC-008 — Add product to cart
+```http
+GET /api/products
+```
 
-Priority: High
-Method: POST
-Endpoint: /api/cart
+### Expected Result
 
-Preconditions: User is authenticated.
+- Response status code is `200 OK`.
+- Response body contains a product list.
+- Product objects contain expected fields.
 
-Request Body:
+Example:
 
+```json
 {
-  "productId": 1,
-  "quantity": 1
+  "id": 1,
+  "title": "Book Name",
+  "price": 19.99
 }
+```
 
-Expected Result:
+---
 
-Status code is 200 OK or 201 Created.
-Product is successfully added to the cart.
-Cart contains the selected product.
-API-TC-009 — Update product quantity in cart
+## TC-API-007 — Get Product Details
 
-Priority: High
-Method: PUT
-Endpoint: /api/cart/{productId}
+**Priority:** High
 
-Preconditions: Product is already added to the cart.
+### Request
 
-Request Body:
+```http
+GET /api/products/{id}
+```
 
-{
-  "quantity": 2
-}
+### Steps
 
-Expected Result:
+1. Send a request with a valid product ID.
+2. Validate the response.
 
-Status code is 200 OK.
-Product quantity is successfully updated.
-Response contains the updated quantity.
-API-TC-010 — Remove product from cart
+### Expected Result
 
-Priority: High
-Method: DELETE
-Endpoint: /api/cart/{productId}
+- Response status code is `200 OK`.
+- Correct product information is returned.
+- Product ID matches the requested ID.
 
-Preconditions: Product is already added to the cart.
+---
 
-Expected Result:
+## TC-API-008 — Get Product with Invalid ID
 
-Status code is 200 OK or 204 No Content.
-Product is removed from the cart.
-4. Order API
-API-TC-011 — Create order with valid data
+**Priority:** Medium
 
-Priority: High
-Method: POST
-Endpoint: /api/orders
+### Request
 
-Preconditions:
+```http
+GET /api/products/999999
+```
 
-User is authenticated.
-Cart contains at least one product.
+### Expected Result
 
-Expected Result:
+- Response status code is `404 Not Found`.
+- Appropriate error response is returned.
 
-Status code is 201 Created.
-Order is successfully created.
-Response contains an order ID.
-Order contains correct product information.
-API-TC-012 — Create order with an empty cart
+---
 
-Priority: High
-Method: POST
-Endpoint: /api/orders
+# 🛒 Shopping Cart
 
-Preconditions:
+---
 
-User is authenticated.
-Cart is empty.
+## TC-API-009 — Add Product to Cart
 
-Expected Result:
+**Priority:** Critical
 
-Status code is 400 Bad Request.
-An appropriate validation error is returned.
-Order is not created.
-API Validation Checklist
+### Preconditions
 
-During API testing, the following checks are performed:
+- User is authenticated.
+- Valid authentication token is available.
 
-Status code validation.
-Response body validation.
-Response schema validation.
-Required fields validation.
-Data type validation.
-Error message validation.
-Authentication and authorization checks.
-Positive testing.
-Negative testing.
-Boundary value testing.
-Invalid request data validation.
-Response time checks.
-HTTP Methods Covered
-Method	Purpose
-GET	Retrieve data
-POST	Create new data
-PUT	Update existing data
-DELETE	Remove data
+### Expected Result
+
+- Product is successfully added to the cart.
+- Response contains updated cart information.
+- Correct status code is returned.
+
+---
+
+## TC-API-010 — Get Shopping Cart
+
+**Priority:** High
+
+### Expected Result
+
+- Response status code is `200 OK`.
+- Cart contains correct products.
+- Product quantities are correct.
+- Total amount is calculated correctly.
+
+---
+
+## TC-API-011 — Remove Product from Cart
+
+**Priority:** High
+
+### Expected Result
+
+- Product is removed successfully.
+- Updated cart data is returned.
+- Removed product is no longer present in the cart.
+
+---
+
+# 📦 Orders
+
+---
+
+## TC-API-012 — Create Order
+
+**Priority:** Critical
+
+### Preconditions
+
+- User is authenticated.
+- Shopping cart contains at least one product.
+
+### Expected Result
+
+- Order is successfully created.
+- Response status code is `201 Created`.
+- Response contains order information.
+- Order ID is generated.
+
+---
+
+## TC-API-013 — Create Order with Empty Cart
+
+**Priority:** High
+
+### Preconditions
+
+- Shopping cart is empty.
+
+### Expected Result
+
+- Order creation is rejected.
+- Appropriate validation error is returned.
+- Order is not created.
+
+---
+
+# 🔒 Authorization
+
+---
+
+## TC-API-014 — Access Protected Endpoint Without Token
+
+**Priority:** Critical
+
+### Steps
+
+1. Select a protected API endpoint.
+2. Remove the authorization token.
+3. Send the request.
+
+### Expected Result
+
+- Response status code is `401 Unauthorized`.
+- Protected data is not returned.
+
+---
+
+## TC-API-015 — Access Protected Endpoint with Invalid Token
+
+**Priority:** High
+
+### Expected Result
+
+- Request is rejected.
+- Response status code is `401 Unauthorized`.
+- Access to protected resources is denied.
+
+---
+
+# 📊 Test Case Summary
+
+| ID | Area | Priority |
+|---|---|---|
+| TC-API-001 | Registration | High |
+| TC-API-002 | Registration | High |
+| TC-API-003 | Registration Validation | Medium |
+| TC-API-004 | Login | Critical |
+| TC-API-005 | Login Validation | High |
+| TC-API-006 | Products | High |
+| TC-API-007 | Product Details | High |
+| TC-API-008 | Product Validation | Medium |
+| TC-API-009 | Shopping Cart | Critical |
+| TC-API-010 | Shopping Cart | High |
+| TC-API-011 | Shopping Cart | High |
+| TC-API-012 | Orders | Critical |
+| TC-API-013 | Order Validation | High |
+| TC-API-014 | Authorization | Critical |
+| TC-API-015 | Authorization | High |
+
+---
+
+## 🔗 Related Documentation
+
+- [← API Testing](../ApiTesting.md)
+- [Postman Documentation](../postman/README.md)
+- [Main Test Cases](../../docs/test-cases/TestCases.md)
+- [Bug Reports](../../test-artifacts/BugReports.md)
