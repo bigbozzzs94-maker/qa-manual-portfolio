@@ -1,155 +1,304 @@
+# ✅ QA Checklists
 
-# QA Checklists
-
-## Project
-
-**BookCart — E-commerce Web Application**
-
-This document contains checklists for testing the main functionality of the BookCart web application.
+> Functional checklists for the **BookCart — E-commerce Web Application**.
 
 ---
 
-# 1. Registration Checklist
+## 📋 Project Information
 
-| ID | Check | Status |
-|---|---|---|
-| REG-01 | Registration page opens successfully | ⬜ |
-| REG-02 | Email field is displayed | ⬜ |
-| REG-03 | Password field is displayed | ⬜ |
-| REG-04 | Confirm Password field is displayed | ⬜ |
-| REG-05 | Register button is displayed | ⬜ |
-| REG-06 | User can register with valid data | ⬜ |
-| REG-07 | Registration with an already existing email is handled correctly | ⬜ |
-| REG-08 | Invalid email format validation works correctly | ⬜ |
-| REG-09 | Empty email field validation works correctly | ⬜ |
-| REG-10 | Empty password field validation works correctly | ⬜ |
-| REG-11 | Password confirmation validation works correctly | ⬜ |
-| REG-12 | Different passwords cannot be submitted | ⬜ |
-| REG-13 | Password field masks entered characters | ⬜ |
-| REG-14 | User is redirected correctly after successful registration | ⬜ |
+| Parameter | Description |
+|---|---|
+| **Project** | BookCart |
+| **Application Type** | E-commerce Web Application |
+| **Platform** | Web |
+| **Testing Type** | Manual Functional Testing |
+| **Status** | Active |
 
 ---
 
-# 2. Authentication Checklist
+## 🎯 Purpose
 
-| ID | Check | Status |
-|---|---|---|
-| AUTH-01 | Login page opens successfully | ⬜ |
-| AUTH-02 | Email field is displayed | ⬜ |
-| AUTH-03 | Password field is displayed | ⬜ |
-| AUTH-04 | Login button is displayed | ⬜ |
-| AUTH-05 | User can log in with valid credentials | ⬜ |
-| AUTH-06 | Invalid email is handled correctly | ⬜ |
-| AUTH-07 | Invalid password is handled correctly | ⬜ |
-| AUTH-08 | Empty fields validation works correctly | ⬜ |
-| AUTH-09 | Password is masked | ⬜ |
-| AUTH-10 | Error message is displayed for invalid credentials | ⬜ |
-| AUTH-11 | User session is created after successful login | ⬜ |
-| AUTH-12 | Logout functionality works correctly | ⬜ |
-| AUTH-13 | User cannot access protected pages after logout | ⬜ |
+These checklists are designed to verify the main functionality of the BookCart application and provide structured test coverage for critical user flows.
+
+### Main Testing Areas
+
+- 🔐 Authentication
+- 📝 Registration
+- 📚 Product Catalog
+- 🔎 Product Search
+- 🛒 Shopping Cart
+- 💳 Checkout
+- 📦 Order Management
+- 🖥️ General UI
 
 ---
 
-# 3. Product Catalog Checklist
+# 📝 Registration
 
-| ID | Check | Status |
-|---|---|---|
-| CAT-01 | Product catalog page opens successfully | ⬜ |
-| CAT-02 | Product list is displayed | ⬜ |
-| CAT-03 | Product name is displayed | ⬜ |
-| CAT-04 | Product price is displayed | ⬜ |
-| CAT-05 | Product image is displayed | ⬜ |
-| CAT-06 | Product description is displayed correctly | ⬜ |
-| CAT-07 | User can open product details | ⬜ |
-| CAT-08 | Search functionality works correctly | ⬜ |
-| CAT-09 | Search with an existing product returns results | ⬜ |
-| CAT-10 | Search with a non-existing product is handled correctly | ⬜ |
-| CAT-11 | Product category filtering works correctly | ⬜ |
-| CAT-12 | Sorting functionality works correctly | ⬜ |
-| CAT-13 | Product data is displayed correctly after page refresh | ⬜ |
+## Registration Page
 
----
+- [ ] Registration page opens successfully
+- [ ] All required fields are displayed
+- [ ] Email field is available
+- [ ] Password field is available
+- [ ] Confirm Password field is available
+- [ ] Register button is displayed and enabled correctly
 
-# 4. Shopping Cart Checklist
+## Positive Scenarios
 
-| ID | Check | Status |
-|---|---|---|
-| CART-01 | Shopping cart page opens successfully | ⬜ |
-| CART-02 | User can add a product to the cart | ⬜ |
-| CART-03 | Added product appears in the cart | ⬜ |
-| CART-04 | Correct product name is displayed | ⬜ |
-| CART-05 | Correct product price is displayed | ⬜ |
-| CART-06 | Product quantity is displayed | ⬜ |
-| CART-07 | User can increase product quantity | ⬜ |
-| CART-08 | User can decrease product quantity | ⬜ |
-| CART-09 | User cannot set an invalid quantity | ⬜ |
-| CART-10 | User can remove a product from the cart | ⬜ |
-| CART-11 | Cart total is calculated correctly | ⬜ |
-| CART-12 | Cart is empty after removing all products | ⬜ |
-| CART-13 | Cart data is handled correctly after page refresh | ⬜ |
+- [ ] User can register with valid data
+- [ ] Registration is successful with a valid email
+- [ ] Registration is successful with a valid password
+- [ ] Password confirmation works correctly
+- [ ] User is redirected after successful registration
+
+## Negative Scenarios
+
+- [ ] Registration with an existing email is handled correctly
+- [ ] Invalid email format is rejected
+- [ ] Empty email field is validated
+- [ ] Empty password field is validated
+- [ ] Empty Confirm Password field is validated
+- [ ] Password mismatch is handled correctly
+- [ ] Invalid password format is rejected
+- [ ] Error messages are displayed correctly
 
 ---
 
-# 5. Checkout Checklist
+# 🔐 Authentication
 
-| ID | Check | Status |
-|---|---|---|
-| CHECK-01 | Checkout page opens successfully | ⬜ |
-| CHECK-02 | User can proceed to checkout from the cart | ⬜ |
-| CHECK-03 | Customer information fields are displayed | ⬜ |
-| CHECK-04 | Required fields validation works correctly | ⬜ |
-| CHECK-05 | Invalid input validation works correctly | ⬜ |
-| CHECK-06 | Order summary is displayed correctly | ⬜ |
-| CHECK-07 | Product prices are correct | ⬜ |
-| CHECK-08 | Total order amount is calculated correctly | ⬜ |
-| CHECK-09 | User can successfully place an order | ⬜ |
-| CHECK-10 | Order confirmation is displayed after successful checkout | ⬜ |
-| CHECK-11 | Order is not created when required data is missing | ⬜ |
+## Login Page
 
----
+- [ ] Login page opens successfully
+- [ ] Email field is displayed
+- [ ] Password field is displayed
+- [ ] Login button is displayed
+- [ ] Password characters are masked
 
-# 6. Order Management Checklist
+## Positive Scenarios
 
-| ID | Check | Status |
-|---|---|---|
-| ORDER-01 | Orders page opens successfully | ⬜ |
-| ORDER-02 | User can view the order list | ⬜ |
-| ORDER-03 | Order ID is displayed | ⬜ |
-| ORDER-04 | Order date is displayed | ⬜ |
-| ORDER-05 | Order status is displayed | ⬜ |
-| ORDER-06 | Order total is displayed correctly | ⬜ |
-| ORDER-07 | User can open order details | ⬜ |
-| ORDER-08 | Correct products are displayed in order details | ⬜ |
-| ORDER-09 | Order status is updated correctly | ⬜ |
-| ORDER-10 | Order data persists after page refresh | ⬜ |
+- [ ] User can log in with valid credentials
+- [ ] User session is created successfully
+- [ ] User is redirected after successful login
+- [ ] Authenticated user can access protected pages
+
+## Negative Scenarios
+
+- [ ] Invalid email is handled correctly
+- [ ] Invalid password is handled correctly
+- [ ] Empty fields are validated
+- [ ] Error message is displayed for invalid credentials
+- [ ] User cannot access protected pages without authentication
+
+## Logout
+
+- [ ] Logout functionality works correctly
+- [ ] User session is terminated after logout
+- [ ] Protected pages cannot be accessed after logout
 
 ---
 
-# 7. General UI Checklist
+# 📚 Product Catalog
 
-| ID | Check | Status |
-|---|---|---|
-| UI-01 | All pages open without critical errors | ⬜ |
-| UI-02 | Navigation works correctly | ⬜ |
-| UI-03 | Buttons are clickable and work correctly | ⬜ |
-| UI-04 | Text is readable | ⬜ |
-| UI-05 | Page layout is displayed correctly | ⬜ |
-| UI-06 | Error messages are understandable | ⬜ |
-| UI-07 | Application works correctly after page refresh | ⬜ |
-| UI-08 | No unexpected console errors occur during normal usage | ⬜ |
-| UI-09 | Application behavior is consistent across supported browsers | ⬜ |
+## Product Display
+
+- [ ] Product catalog opens successfully
+- [ ] Product list is displayed
+- [ ] Product name is displayed
+- [ ] Product price is displayed
+- [ ] Product image is displayed correctly
+- [ ] Product description is displayed correctly
+
+## Product Details
+
+- [ ] User can open product details
+- [ ] Correct product information is displayed
+- [ ] Product price matches the catalog price
+- [ ] Product image loads successfully
+
+## Catalog Functionality
+
+- [ ] Product list loads correctly
+- [ ] Product data remains correct after page refresh
+- [ ] No duplicate products are displayed
+- [ ] Empty catalog state is handled correctly
 
 ---
 
-## Summary
+# 🔎 Product Search
 
-The checklists cover the following functionality:
+## Positive Scenarios
 
-- Registration
-- Authentication
-- Product catalog
-- Product search and filtering
-- Shopping cart
-- Checkout
-- Order management
-- General UI testing
+- [ ] Search field is displayed
+- [ ] User can search for an existing product
+- [ ] Relevant products are displayed
+- [ ] Search results match the search query
+- [ ] Search works with partial product names
+- [ ] Search works with different letter cases
+
+## Negative Scenarios
+
+- [ ] Search for a non-existing product is handled correctly
+- [ ] Empty search request is handled correctly
+- [ ] Special characters are handled correctly
+- [ ] Long search query is handled correctly
+- [ ] No-results message is displayed correctly
+
+---
+
+# 🛒 Shopping Cart
+
+## Add Product
+
+- [ ] User can add a product to the cart
+- [ ] Added product appears in the cart
+- [ ] Correct product name is displayed
+- [ ] Correct product price is displayed
+- [ ] Correct quantity is displayed
+
+## Update Quantity
+
+- [ ] User can increase product quantity
+- [ ] User can decrease product quantity
+- [ ] Cart total updates correctly
+- [ ] Product quantity cannot be negative
+- [ ] Invalid quantity values are rejected
+- [ ] Quantity limits are handled correctly
+
+## Remove Product
+
+- [ ] User can remove a product from the cart
+- [ ] Removed product is no longer displayed
+- [ ] Cart total updates correctly
+- [ ] Empty cart state is displayed correctly
+
+## Cart Persistence
+
+- [ ] Cart data is handled correctly after page refresh
+- [ ] Cart data remains consistent during the user session
+
+---
+
+# 💳 Checkout
+
+## Checkout Page
+
+- [ ] User can navigate from the cart to checkout
+- [ ] Checkout page opens successfully
+- [ ] Customer information fields are displayed
+- [ ] Order summary is displayed
+
+## Validation
+
+- [ ] Required fields are validated
+- [ ] Empty required fields cannot be submitted
+- [ ] Invalid input is rejected
+- [ ] Validation messages are displayed correctly
+
+## Order Creation
+
+- [ ] Product information is correct
+- [ ] Product prices are correct
+- [ ] Total order amount is calculated correctly
+- [ ] User can place an order with valid data
+- [ ] Order confirmation is displayed
+- [ ] Order is not created with missing required information
+
+---
+
+# 📦 Order Management
+
+## Order List
+
+- [ ] Orders page opens successfully
+- [ ] User can view the order list
+- [ ] Order ID is displayed
+- [ ] Order date is displayed
+- [ ] Order status is displayed
+- [ ] Order total is displayed correctly
+
+## Order Details
+
+- [ ] User can open order details
+- [ ] Ordered products are displayed correctly
+- [ ] Product quantities are correct
+- [ ] Product prices are correct
+- [ ] Total order amount is correct
+
+## Data Validation
+
+- [ ] Order status is updated correctly
+- [ ] Order data persists after page refresh
+- [ ] User cannot access another user's order
+
+---
+
+# 🖥️ General UI
+
+## Navigation
+
+- [ ] Main navigation works correctly
+- [ ] All links work correctly
+- [ ] Back navigation works correctly
+- [ ] Page refresh does not cause unexpected errors
+
+## Interface
+
+- [ ] Text is readable
+- [ ] Page layout is displayed correctly
+- [ ] Buttons are visible and clickable
+- [ ] Input fields are displayed correctly
+- [ ] Error messages are understandable
+- [ ] Loading states are handled correctly
+
+## Browser Console
+
+- [ ] No critical JavaScript errors occur during normal usage
+- [ ] No unexpected console errors occur
+- [ ] Network requests complete successfully
+
+---
+
+# 🚨 Priority Areas
+
+| Area | Priority |
+|---|---|
+| Registration | High |
+| Authentication | Critical |
+| Product Catalog | High |
+| Product Search | Medium |
+| Shopping Cart | Critical |
+| Checkout | Critical |
+| Order Management | High |
+| General UI | Medium |
+
+---
+
+# 📊 Checklist Summary
+
+| Module | Main Coverage |
+|---|---|
+| 📝 Registration | Form validation and account creation |
+| 🔐 Authentication | Login, logout and authorization |
+| 📚 Product Catalog | Product display and details |
+| 🔎 Product Search | Search functionality and validation |
+| 🛒 Shopping Cart | Add, update and remove products |
+| 💳 Checkout | Validation and order creation |
+| 📦 Order Management | Orders and order details |
+| 🖥️ General UI | Navigation and interface behavior |
+
+---
+
+## 🔗 Related Documentation
+
+- [🧠 Mind Map](../docs/mind-maps/MindMap.md)
+- [🧪 Test Cases](../docs/test-cases/TestCases.md)
+- [📋 Test Plan](../docs/test-plan/TestPlan.md)
+- [🎯 Test Strategy](../docs/test-strategy/TestStrategy.md)
+- [🐞 Bug Reports](../test-artifacts/BugReports.md)
+
+---
+
+## 📌 Notes
+
+> The checklists can be updated as the application functionality and testing scope evolve.
