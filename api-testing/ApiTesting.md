@@ -1,18 +1,26 @@
 
-# API Testing
+# 🔗 API Testing
 
-## Project Information
+This document describes API testing performed for the **BookCart E-commerce Web Application**.
 
-| Field | Value |
-|---|---|
-| Project | BookCart |
-| API Type | REST API |
-| Tools | Postman, Swagger |
-| Data Format | JSON |
+The purpose of API testing is to verify that backend endpoints work correctly, return expected responses, process data properly, and handle invalid requests appropriately.
 
 ---
 
-## Testing Scope
+## 📋 Project Information
+
+| Field | Value |
+|---|---|
+| **Project** | BookCart |
+| **Application Type** | E-commerce Web Application |
+| **API Type** | REST API |
+| **Tools** | Postman, Swagger |
+| **Data Format** | JSON |
+| **Testing Type** | Manual API Testing |
+
+---
+
+## 🎯 Testing Scope
 
 The following API functionality is covered:
 
@@ -24,111 +32,91 @@ The following API functionality is covered:
 - Checkout
 - Order management
 
----
-
-## HTTP Methods
-
-| Method | Purpose |
-|---|---|
-| GET | Retrieve data |
-| POST | Create new data |
-| PUT | Update existing data |
-| DELETE | Remove data |
+The main focus of testing is validating API requests and responses, business logic, error handling, and data consistency.
 
 ---
 
-## API Test Scenarios
+## 🌐 HTTP Methods
 
-### Authentication
-
-- Register a new user with valid data
-- Register with an existing email
-- Register with invalid data
-- Login with valid credentials
-- Login with invalid credentials
-- Verify authentication error messages
-
-### Product Catalog
-
-- Get the list of products
-- Get product details
-- Search for an existing product
-- Search for a non-existing product
-- Verify response data structure
-
-### Shopping Cart
-
-- Add a product to the cart
-- Get cart contents
-- Update product quantity
-- Remove a product from the cart
-- Verify cart data after each operation
-
-### Checkout
-
-- Create an order with valid data
-- Try to create an order with invalid data
-- Verify order response
-- Verify validation error messages
+| Method | Purpose | Example |
+|---|---|---|
+| **GET** | Retrieve data | Get product list |
+| **POST** | Create new data | Create user or order |
+| **PUT** | Update existing data | Update user information |
+| **PATCH** | Partially update data | Update selected fields |
+| **DELETE** | Remove data | Delete an item from the cart |
 
 ---
 
-## Response Validation
+## 🔍 What Was Tested
 
-During API testing, the following checks are performed:
+During API testing, the following checks were performed:
 
-- HTTP status codes
-- Response body
-- Response headers
-- JSON structure
-- Required fields
-- Data types
-- Error messages
-- Response time
+### Request Validation
 
----
+- Correct HTTP method is used
+- Endpoint URL is valid
+- Required request parameters are provided
+- Request headers are correct
+- Request body contains valid data
+- Data types match API requirements
 
-## Status Codes
+### Response Validation
 
-| Status Code | Description |
-|---|---|
-| 200 | OK |
-| 201 | Created |
-| 400 | Bad Request |
-| 401 | Unauthorized |
-| 404 | Not Found |
-| 500 | Internal Server Error |
+- HTTP status code is correct
+- Response body contains expected data
+- JSON structure matches expectations
+- Required fields are present
+- Field values are correct
+- Error messages are meaningful
 
----
+### Authentication and Authorization
 
-## Tools Used
+- Valid credentials allow successful authentication
+- Invalid credentials are rejected
+- Unauthorized requests are handled correctly
+- Protected endpoints require authentication
+- Authentication errors return appropriate status codes
 
-### Postman
+### Negative Testing
 
-Used for:
+Negative scenarios were also tested to verify system behavior when invalid data is provided:
 
-- Sending HTTP requests
-- Testing REST API endpoints
-- Creating request collections
-- Validating responses
-- Testing positive and negative scenarios
-
-### Swagger
-
-Used for:
-
-- Reviewing API documentation
-- Exploring available endpoints
-- Checking request parameters
-- Checking request and response models
-- Understanding API contracts
+- Invalid email format
+- Incorrect password
+- Empty required fields
+- Missing request parameters
+- Invalid data types
+- Invalid resource ID
+- Unauthorized requests
+- Requests for non-existing resources
 
 ---
 
-## Testing Types
+## 📊 HTTP Status Codes Validation
 
-- Functional Testing
-- Positive Testing
-- Negative Testing
-- Integration Testing
-- API Validation
+The following status codes were checked during testing:
+
+| Status Code | Meaning | Expected Usage |
+|---|---|---|
+| **200 OK** | Successful request | Data retrieved successfully |
+| **201 Created** | Resource created | User, order, or other resource created |
+| **400 Bad Request** | Invalid request | Incorrect or missing data |
+| **401 Unauthorized** | Authentication required | Invalid or missing authentication |
+| **403 Forbidden** | Access denied | User has no permission |
+| **404 Not Found** | Resource not found | Invalid endpoint or resource ID |
+| **409 Conflict** | Data conflict | Duplicate or conflicting data |
+| **500 Internal Server Error** | Server error | Unexpected backend failure |
+
+---
+
+# 🔐 Authentication Testing
+
+Authentication API functionality was tested using valid and invalid user credentials.
+
+### Positive Scenario
+
+**Request:**
+
+```http
+POST /api/login
