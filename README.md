@@ -222,26 +222,25 @@ SQL queries demonstrating database testing and data validation skills.
 ```text
 qa-manual-portfolio/
 │
+├── api-testing/
+│   ├── postman/
+│   │   ├── BookCart_API_Collection.md
+│   │   └── README.md
+│   │
+│   ├── test-cases/
+│   │   └── APITestCases.md
+│   │
+│   └── ApiTesting.md
+│
 ├── checklists/
 │   └── Checklists.md
 │
 ├── docs/
-│   ├── mind-maps/
-│   │   ├── BookCart-MindMap.png
-│   │   └── MindMap.md
-│   │
-│   ├── project-overview/
-│   │
-│   ├── test-cases/
-│   │   └── TestCases.md
-│   │
-│   ├── test-design/
-│   │
-│   ├── test-plan/
-│   │   └── TestPlan.md
-│   │
-│   └── test-strategy/
-│       └── TestStrategy.md
+│   └── mind-maps/
+│       ├── BookCart-MindMap.png
+│       └── MindMap.md
+│
+├── screenshots/
 │
 ├── sql/
 │   └── SQLQueries.md
@@ -250,3 +249,4 @@ qa-manual-portfolio/
 │   └── BugReports.md
 │
 └── README.md
+```
